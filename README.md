@@ -1,7 +1,7 @@
 
 <div align="center">
 
-Getting to know Jest testing framework
+Getting to know Jest
 
 </div>
 <div align="center">
