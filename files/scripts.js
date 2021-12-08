@@ -17,10 +17,15 @@ export class Calculator {
   }
 
   static divide(x, y) {
+    if (y == 0) throw new Error("y can't be Zero");
     return x / y;
   }
 
   static multiply(x, y) {
     return x * y;
   }
+}
+
+export function capitalize(str) {
+  return str[0].toUpperCase() + str.slice(1, str.length);
 }

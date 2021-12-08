@@ -33,6 +33,17 @@ describe('Unit Tests', () => {
   });
 
   describe('Calculator', () => {
+    test('returns a value Number type', () => {
+      const result1 = Scripts.Calculator.add(-3, -3);
+      const result2 = Scripts.Calculator.subtract(-3, -3);
+      const result3 = Scripts.Calculator.divide(-3, -3);
+      const result4 = Scripts.Calculator.multiply(-3, -3);
+      expect(typeof result1).toBe('number');
+      expect(typeof result2).toBe('number');
+      expect(typeof result3).toBe('number');
+      expect(typeof result4).toBe('number');
+    });
+
     describe('add(x, y)', () => {
       test('return sum of x and y', () => {
         const expected = -6;
@@ -53,6 +64,10 @@ describe('Unit Tests', () => {
         const result = Scripts.Calculator.divide(-3, -3);
         expect(result).toBe(expected);
       });
+      test('throws an error if y equals zero', () => {
+        let result = () => Scripts.Calculator.divide(-3, 0);
+        expect(() => result()).toThrow();
+      });
     });
     describe('multiply(x, y)', () => {
       test('return multiply x and y', () => {
@@ -60,6 +75,14 @@ describe('Unit Tests', () => {
         const result = Scripts.Calculator.multiply(-3, -3);
         expect(result).toBe(expected);
       });
+    });
+  });
+
+  describe('capitalize()', () => {
+    test('returns str with first char capitalized', () =>{
+      const expected = 'Wow!'
+      const result = Scripts.capitalize('wow!');
+      expect(result).toBe(expected);
     });
   });
 });
