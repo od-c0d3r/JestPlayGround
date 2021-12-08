@@ -4,5 +4,23 @@ export function stringLength(str) {
 }
 
 export function reverseString(str) {
-    return str.split('').reverse().join('')
+  return str.split('').reverse().join('');
+}
+
+export class Calculator {
+  static add(x, y) {
+    return x + y;
+  }
+
+  static subtract(x, y) {
+    return x - y;
+  }
+
+  static divide(x, y) {
+    return x / y;
+  }
+
+  static multiply(x, y) {
+    return x * y;
+  }
 }
